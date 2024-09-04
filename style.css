@@ -1,0 +1,225 @@
+*{
+    /* Primary */
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red-work: hsl(15, 100%, 70%);
+    --Soft-blue-play: hsl(195, 74%, 62%);
+    --Light-red-study: hsl(348, 100%, 68%);
+    --Lime-green-exercise: hsl(145, 58%, 55%);
+    --Violet-social-: hsl(264, 64%, 52%);
+    --Soft-orange-self-care: hsl(43, 84%, 65%);
+
+    /* Neutral */
+
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --card--hover: hsl(235, 40%, 40%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+
+    /* css reset */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Very-dark-blue) ;
+    color: aliceblue;
+    font-family: "Rubik", sans-serif;
+}
+
+main{
+    display: grid;
+    gap: 2rem;
+    margin: 4rem 2rem;
+    max-width: 1200px;
+}
+
+section{
+    border-radius: 1rem;
+}
+
+#profile,.content{
+    background-color: var(--Dark-blue);
+}
+
+.profile-person{
+    background-color: var(--Blue);
+    border-radius: 1rem;
+    display: flex;
+    padding: 2rem;
+}
+
+.profile-person img{
+    width: 25%;
+    border: 3px aliceblue solid;
+    border-radius: 50%;
+}
+
+h1{
+    font-weight: 300;
+}
+.person-info{
+    padding-left: 0.9rem;
+    align-self: center;
+}
+
+
+.person-info p{
+    color: var(--Desaturated-blue);
+}
+
+.profile-nav{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.profile-nav li button{
+    all: unset;
+    color: var(--Desaturated-blue);
+    font-size: 1.2rem;
+    
+}
+
+.card{
+    display: flex;
+    background-repeat: no-repeat;
+    background-position:top -10px right 30px;
+}
+
+.work{
+    background-color: var(--Light-red-work);
+    background-image: url(./images/icon-work.svg);
+}
+
+.play{
+    background-color: var(--Soft-blue-play);
+    background-image: url(./images/icon-play.svg);
+}
+
+.study{
+    background-color: var(--Light-red-study);
+    background-image: url(./images/icon-study.svg);
+}
+
+.exercise{
+    background-color: var(--Lime-green-exercise);
+    background-image: url(./images/icon-exercise.svg);
+}
+
+.social{
+    background-color: var(--Violet-social-);
+    background-image: url(./images/icon-social.svg);
+}
+.self-care{
+    background-color: var(--Soft-orange-self-care);
+    background-image: url(./images/icon-self-care.svg);
+}
+.content{
+    width: 100%;
+    margin-top: 12%;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    align-self: self-end;
+}
+
+.content:hover{
+    cursor: pointer;
+    background-color: var(--card--hover );
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.header img{
+    object-fit: contain;
+}
+
+.timeframe{
+    display: none;
+}
+.active-timeframe{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.6rem;
+}
+
+.active-timeframe p:first-of-type{
+    font-size: 2.2rem;
+}
+.active-timeframe p:last-of-type{
+    color: var(--Desaturated-blue);
+    padding-top: 0.4rem;
+}
+h2{
+    font-size: 1rem;
+    color: aliceblue;
+}
+
+ul li .active-btn{
+    color: aliceblue;   
+}
+.btn:hover{
+    color: aliceblue;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+@media screen and (min-width:740px) {
+    body{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    main{
+        grid-template-columns: repeat(4,1fr);
+    }
+    #profile{
+        grid-row: span 2;
+    }
+
+    
+    .profile-person{
+        flex-direction: column;
+        padding-bottom: 4rem;       
+    }
+    .profile-person img{
+        width: 45%;
+    }
+    h1{
+        max-width: 20%;
+        font-size: 2.5rem;
+    }
+    .person-info{
+        align-self: self-start;
+        padding: 2rem 2rem 0 0;
+    }
+    .profile-nav{
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+    }
+    .profile-nav li:not(:first-of-type){
+        padding-top: 1rem;
+    }
+
+    
+    .active-timeframe{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0.8rem;
+    }
+    .active p:first-of-type{
+        font-size: 2.5rem;
+    }
+    .active p:last-of-type{
+        padding-top: 0.5rem;
+    }
+}
